@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://prod-server:3306/proddb
+    username: produser
+    password: prodpass  # 실제 운영 환경에서는 외부에서 주입하는 것이 안전합니다
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate  # 운영 환경에서는 스키마 변경을 수동으로 관리
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: WARN
